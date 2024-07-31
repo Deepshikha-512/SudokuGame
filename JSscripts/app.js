@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     document.getElementById('image-sequence-container').classList.add('hidden');
                     document.getElementById('game-container').classList.remove('hidden');
 		    break; 
+		}
 
     //end the page
     // Initialize Sudoku library
