@@ -11,58 +11,31 @@ var selectedTile;
 var disableSelect;
 var timerType;
 
-/*
- document.addEventListener('DOMContentLoaded', function() {
-            const images = document.querySelectorAll('#image-sequence img');
-            const nextBtn = document.getElementById('next-btn');
-            let currentIndex = 0;
 
-            images.forEach((img, index) => {
-                if (index !== 0) img.classList.add('hidden');
-            });
-
-            nextBtn.addEventListener('click', function() {
-                if (currentIndex < images.length - 1) {
-                    images[currentIndex].classList.add('hidden');
-                    currentIndex++;
-                    images[currentIndex].classList.remove('hidden');
-                } else {
-                    document.getElementById('image-sequence-container').classList.add('hidden');
-                    document.getElementById('game-container').classList.remove('hidden');
-
-
-		   
-		    
-		                }
-            });
-        });
-	
-
-        function startGame() {
-            // Initialize Sudoku game
-        }
-*/
 // Run script once DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     //start the page
-     const images = document.querySelectorAll('#image-sequence img');
-            const nextBtn = document.getElementById('next-btn');
-            let currentIndex = 0;
+    const images = document.querySelectorAll('#image-sequence img');
 
-            images.forEach((img, index) => {
-                if (index !== 0) img.classList.add('hidden');
-            });
+     
+    let currentIndex = 0;
 
-            nextBtn.addEventListener('click', function() {
-                if (currentIndex < images.length - 1) {
-                    images[currentIndex].classList.add('hidden');
-                    currentIndex++;
-                    images[currentIndex].classList.remove('hidden');
-                } else {
-                    document.getElementById('image-sequence-container').classList.add('hidden');
-                    document.getElementById('game-container').classList.remove('hidden');
-		    break; 
-		}
+    function showNextImage() {
+        // Hide the current image
+        images[currentIndex].style.display = 'none';
+
+        // Move to the next image
+        currentIndex = (currentIndex + 1) % images.length;
+
+        // Show the next image
+        images[currentIndex].style.display = 'block';
+    }
+
+    // Show the first image initially
+    images[currentIndex].style.display = 'block';
+
+    // Set up an interval to show the next image every 10 seconds
+    setInterval(showNextImage, 10000); // 10000 milliseconds = 10 seconds
 
     //end the page
     // Initialize Sudoku library
