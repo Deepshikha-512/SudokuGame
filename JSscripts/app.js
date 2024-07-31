@@ -11,9 +11,59 @@ var selectedTile;
 var disableSelect;
 var timerType;
 
+/*
+ document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('#image-sequence img');
+            const nextBtn = document.getElementById('next-btn');
+            let currentIndex = 0;
 
+            images.forEach((img, index) => {
+                if (index !== 0) img.classList.add('hidden');
+            });
+
+            nextBtn.addEventListener('click', function() {
+                if (currentIndex < images.length - 1) {
+                    images[currentIndex].classList.add('hidden');
+                    currentIndex++;
+                    images[currentIndex].classList.remove('hidden');
+                } else {
+                    document.getElementById('image-sequence-container').classList.add('hidden');
+                    document.getElementById('game-container').classList.remove('hidden');
+
+
+		   
+		    
+		                }
+            });
+        });
+	
+
+        function startGame() {
+            // Initialize Sudoku game
+        }
+*/
 // Run script once DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    //start the page
+     const images = document.querySelectorAll('#image-sequence img');
+            const nextBtn = document.getElementById('next-btn');
+            let currentIndex = 0;
+
+            images.forEach((img, index) => {
+                if (index !== 0) img.classList.add('hidden');
+            });
+
+            nextBtn.addEventListener('click', function() {
+                if (currentIndex < images.length - 1) {
+                    images[currentIndex].classList.add('hidden');
+                    currentIndex++;
+                    images[currentIndex].classList.remove('hidden');
+                } else {
+                    document.getElementById('image-sequence-container').classList.add('hidden');
+                    document.getElementById('game-container').classList.remove('hidden');
+		    break; 
+
+    //end the page
     // Initialize Sudoku library
     initializeSudokuLib();
     // Execute startGame function when start button is clicked
