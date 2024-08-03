@@ -30,12 +30,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show the next image
         images[currentIndex].style.display = 'block';
     }
-
     // Show the first image initially
     images[currentIndex].style.display = 'block';
-
+    images.forEach(image => image.style.display = 'none');
     // Set up an interval to show the next image every 10 seconds
-     setInterval(showNextImage, 10000); // 10000 milliseconds = 10 seconds
+    const imageInterval = setInterval(showNextImage, 10000); // 10000 milliseconds = 10 seconds
 
     //end the page
     // Initialize Sudoku library
@@ -231,6 +230,8 @@ function initializeGame(inputBoard) {
 
 function startGame() {
     // Reset setting of the game
+    const images = document.querySelectorAll('#image-sequence img');
+    
     resetGame();
     // Choose board difficulty and initialize the Sudoku board accordingly
     if (id("difficulty-easy").checked) {
