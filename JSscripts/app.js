@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize Sudoku library
     initializeSudokuLib();
     // Execute startGame function when start button is clicked
-    id("start-btn").addEventListener("click", startGame);
+    id("start-btn").addEventListener("click", startGame(imageInterval,images));
     // Add event listener to theme toggle button
     id("theme-btn").addEventListener("change", function() {
         if (this.checked) {
@@ -229,7 +229,7 @@ function initializeGame(inputBoard) {
     id("game-container").style.visibility = "visible";
 }
 
-function startGame() {
+function startGame(imageInterval,images) {
     // Reset setting of the game
     clearInterval(imageInterval);
         
