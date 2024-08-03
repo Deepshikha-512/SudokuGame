@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeSudokuLib();
     // Execute startGame function when start button is clicked
     id("start-btn").addEventListener("click", , function() {
-	clearInterval(imageInterval);
 	startGame();
     });
     // Add event listener to theme toggle button
@@ -228,6 +227,8 @@ function initializeGame(inputBoard) {
     // Compute solution for the given input Sudoku board
     solution = board_grid_to_string(solveSudoku(board_string_to_grid(inputBoard)));
     // Show game components when everything is ready
+    //changes made by vishnu
+    clearInterval(imageInterval);
     id("game-container").style.visibility = "visible";
 }
 
