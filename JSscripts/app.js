@@ -20,6 +20,27 @@ document.addEventListener('DOMContentLoaded', function() {
      
     let currentIndex = 0;
 
+    let continueSlideshow = true;
+
+	function showNextImage() {
+	    if (!continueSlideshow) return;
+	
+	    // Hide the current image
+	    images[currentIndex].style.display = 'none';
+	
+	    // Move to the next image
+	    currentIndex = (currentIndex + 1) % images.length;
+	
+	    // Show the next image
+	    images[currentIndex].style.display = 'block';
+	
+	    // Continue the slideshow after 10 seconds
+	    setTimeout(showNextImage, 10000);
+	}
+	
+
+
+    /*
     function showNextImage() {
         // Hide the current image
         images[currentIndex].style.display = 'none';
@@ -30,12 +51,18 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show the next image
         images[currentIndex].style.display = 'block';
     }
+    */
     // Show the first image initially
     images[currentIndex].style.display = 'block';
     images.forEach(image => image.style.display = 'none');
     images[currentIndex].style.display = 'block';
     // Set up an interval to show the next image every 10 seconds
-    setInterval(showNextImage, 10000); // 10000 milliseconds = 10 seconds
+    //setInterval(showNextImage, 10000); // 10000 milliseconds = 10 seconds
+    	// Start the slideshow
+	showNextImage();
+	function stopSlideshow() {
+	    continueSlideshow = false;
+	}
 
     //end the page
     // Initialize Sudoku library
@@ -232,7 +259,6 @@ function initializeGame(inputBoard) {
 
 function startGame() {
     // Reset setting of the game
-    const images = document.querySelectorAll('#image-sequence img');
     
     resetGame();
     // Choose board difficulty and initialize the Sudoku board accordingly
@@ -248,6 +274,7 @@ function startGame() {
         inputBoard = generateSudoku("very-hard");
     }
     // Initialize game with the given inputBoard
+    stopSlideshow()
     initializeGame(inputBoard);
 }
 
