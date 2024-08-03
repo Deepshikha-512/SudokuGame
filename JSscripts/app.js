@@ -41,9 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize Sudoku library
     initializeSudokuLib();
     // Execute startGame function when start button is clicked
-    id("start-btn").addEventListener("click", function() {
-	startGame();
-    });
+    id("start-btn").addEventListener("click", startGame);
     // Add event listener to theme toggle button
     id("theme-btn").addEventListener("change", function() {
         if (this.checked) {
