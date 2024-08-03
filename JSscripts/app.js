@@ -230,6 +230,7 @@ function initializeGame(inputBoard) {
     // Show game components when everything is ready
     //changes made by vishnu
     clearInterval(imageInterval);
+    images.forEach(image => image.style.display = 'none');
     id("game-container").style.visibility = "visible";
 }
 
