@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize Sudoku library
     initializeSudokuLib();
     // Execute startGame function when start button is clicked
-    id("start-btn").addEventListener("click", startGame(imageInterval,images));
+    id("start-btn").addEventListener("click", startGame);
     // Add event listener to theme toggle button
     id("theme-btn").addEventListener("change", function() {
         if (this.checked) {
@@ -229,12 +229,8 @@ function initializeGame(inputBoard) {
     id("game-container").style.visibility = "visible";
 }
 
-function startGame(imageInterval,images) {
+function startGame() {
     // Reset setting of the game
-    clearInterval(imageInterval);
-        
-        // Hide all images
-    images.forEach(image => image.style.display = 'none');
     resetGame();
     // Choose board difficulty and initialize the Sudoku board accordingly
     if (id("difficulty-easy").checked) {
