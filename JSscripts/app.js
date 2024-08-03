@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     images.forEach(image => image.style.display = 'none');
     images[currentIndex].style.display = 'block';
     // Set up an interval to show the next image every 10 seconds
-    const imageInterval = setInterval(showNextImage, 10000); // 10000 milliseconds = 10 seconds
+    setInterval(showNextImage, 10000); // 10000 milliseconds = 10 seconds
 
     //end the page
     // Initialize Sudoku library
