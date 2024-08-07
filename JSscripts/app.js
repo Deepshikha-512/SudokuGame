@@ -279,7 +279,7 @@ function endGame() {
             title_txt = "GAME OVER.😮";
         } else {
             var x = id("snackbar-win");
-            var audio = new Audio('./audio/audio-win.wav');
+            var audio = new Audio('WhatsApp Audio 2024-08-07 at 23.08.35.mpeg');
             title_txt = "Congrats!🎉";
         }
     }
