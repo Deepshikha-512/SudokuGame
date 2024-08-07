@@ -264,7 +264,7 @@ function endGame() {
         var s = t[1];
         if (lives == 0 || (parseInt(m, 10) == 0 && parseInt(s, 10) == 0)) {
             var x = id("snackbar-lose");
-            var audio = new Audio('./audio/audio-lose.wav');
+            var audio = new Audio('./audioaudio-lose.wav.mpeg');
             title_txt = "GAME OVER.😮";
         } else {
             var x = id("snackbar-win");
